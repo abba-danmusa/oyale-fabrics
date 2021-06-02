@@ -1,12 +1,14 @@
 const express = require('express')
+const siteController = require('../controllers/siteController')
 
 
 // creates an express router
 const router = express.Router()
 
+// GET routes
+router.get('/', siteController.homePage)
 
-
-// post routes
+// POST routes
 
 
 // exports the express router

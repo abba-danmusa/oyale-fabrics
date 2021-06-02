@@ -26,6 +26,7 @@
     "mongoose": "^5.12.12",
     "nodemon": "^2.0.7",
     "pug": "^3.0.2",
+    "sessions": "0.0.2-7",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"
   }

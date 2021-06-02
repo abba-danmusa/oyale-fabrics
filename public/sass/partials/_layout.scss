@@ -1,0 +1,40 @@
+nav {
+    background-color: $orange;
+    height: fit-content;
+    width: 100%;
+    svg {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+button {
+    background-color: $orange;
+    height: fit-content;
+    width: fit-content;
+    border: none;
+    padding: 0;
+}
+
+.ads {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+[class*="chevron"] {
+    align-self: center;
+}
+
+.menu__items {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.menu__left {
+    display: flex;
+    flex-direction: row;
+}
+
+.menu__item {}

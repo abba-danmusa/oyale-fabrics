@@ -1,4 +1,5 @@
 const express = require('express')
+const sessions = require('sessions')
 const flash = require('connect-flash')
 const path = require('path')
 const bodyParser = require('body-parser')
@@ -24,7 +25,7 @@ app.use(flash())
 // pass variables to all of the templates
 app.use((req, res, next) => {
     res.locals.h = helpers
-    res.locals.flashes = req.flash()
+        // res.locals.flashes = req.flash()
     res.locals.currentPath = req.path
     next()
 })
@@ -41,7 +42,7 @@ app.use('/', routes)
 app.use(errorHandlers.notFound)
 
 // one of the error handlers will see if these errors are just validation errors
-// app.use(errorHandlers.flashValidationErrors)
+app.use(errorHandlers.flashValidationErrors)
 
 // otherwise 
 if (app.get('env') === 'development') {

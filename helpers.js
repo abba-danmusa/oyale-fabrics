@@ -9,8 +9,11 @@ exports.dump = (obj) => JSON.stringify(obj, null, 2)
 exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`)
 
 // site info
-exports.siteName = `Developer Abba Danmusa`
+exports.siteName = `Oyale Fabrics and Fashion Empire`
 
 exports.menu = [
-
+    { title: 'Men', link: '/categories/men' },
+    { title: 'Women', link: '/categories/women' },
+    { title: 'About', link: '/about' },
+    { title: 'Oyale Fabrics & Fashion Empire', link: '/' }
 ]

@@ -1,0 +1,53 @@
+doctype html
+html
+  head
+    title= `${title} | ${h.siteName}`
+    link(rel="stylesheet", href="/sass/style.css")
+    link(rel='shortcut icon', type='image/png' href='/images/icons/snowman.png')
+    link(href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet")
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    
+  body.body
+    block header
+      nav
+        .ads
+          button.chevron__left
+            !=h.icon('chevron-left-solid')
+          h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          button.chevron__right
+            !=h.icon('chevron-right-solid')
+        .menu__items
+          .menu__left
+            each item in h.menu
+              .menu__item
+                a(href=item.link) !{item.title}
+          .menu__right      
+            -let menus = ['search-solid', 'user-solid', 'shopping-bag-solid']
+            each icon in menus
+              button.button 
+                != h.icon(icon)    
+
+    .content  
+      block content
+
+    footer.footer
+      block footer
+        -let icons = []
+        .socials
+          each icon in icons
+            a.social(href="#")
+              != h.icon(icon)
+        .copyright
+          p privacy | contact
+          p &copy 2021 Oyale Fabrics and Fashion Empire. 
+          p All rights reserved.
+          
+
+    block scripts
+      script(src='/dist/App.bundle.js', defer)
+      script(src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js")
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js", defer)
+      script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js", defer)
+      script(src="https://kit.fontawesome.com/ca3717ead6.js" crossorigin="anonymous", defer)
+            
+          
