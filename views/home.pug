@@ -1,0 +1,14 @@
+extends layout
+block content
+
+  .hero
+    .image__slide.fade
+      -let images = ['hero', 'hero2', 'hero3', 'hero4']
+      each image in images
+        img(src=`/images/photos/${image}.jpg` alt='hero image')
+      a.hero__text(href='#') Discover
+      a(class="prev" onclick="plusSlides(-1)") 
+        !=h.icon('chevron-left-solid')
+      a(class="next" onclick="plusSlides(1)")
+        !=h.icon('chevron-right-solid')
+  .home__contents

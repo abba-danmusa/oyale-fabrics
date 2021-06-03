@@ -1,13 +1,11 @@
+// Nav
 nav {
     position: fixed;
     top: 0;
     background-color: $orange;
-    height: fit-content;
+    height: 15vh;
     width: 100%;
-    svg {
-        width: 27px;
-        height: 27px;
-    }
+    z-index: 1;
 }
 
 .ads {
@@ -17,7 +15,7 @@ nav {
     margin-top: 2vh;
     svg {
         width: 12px;
-        height: 15px;
+        height: 20px;
     }
     div {
         margin: 0 4vw;
@@ -59,6 +57,13 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     color: $silver;
+    svg {
+        width: 27px;
+        height: 27px;
+        &>path {
+            fill: $silver;
+        }
+    }
 }
 
 button {
@@ -88,6 +93,48 @@ a {
     width: 30%;
     justify-content: space-around;
     align-items: flex-end;
+}
+
+// Footer //
+.footer {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    margin-top: 20vh;
+    height: fit-content;
+    width: 100%;
+    .socials {
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        justify-content: space-around;
+        width: 100%;
+        height: fit-content;
+        margin: 4vh 0;
+    }
+    .social {
+        justify-content: space-between;
+        width: fit-content;
+        height: fit-content;
+    }
+    svg {
+        width: 30px;
+        height: 30px;
+        &>path {
+            fill: $orange;
+        }
+    }
+    .copyright {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 4vh 0;
+    }
+    .copyright p {
+        color: $orange;
+        width: fit-content;
+        margin: 0;
+    }
 }
 
 @media only screen and (min-width: 1025) {

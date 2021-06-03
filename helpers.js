@@ -8,6 +8,9 @@ exports.dump = (obj) => JSON.stringify(obj, null, 2)
 // Icons directory (inserting an svg)
 exports.icon = (name) => fs.readFileSync(`./public/images/icons/${name}.svg`)
 
+// Images directory (inserting an image)
+exports.image = (name) => fs.readFileSync(`./public/images/photos/${name}.jpg`)
+
 // site info
 exports.siteName = `Oyale Fabrics & Fashion Empire`
 
