@@ -13,7 +13,8 @@ html
         .ads
           button.chevron__left
             !=h.icon('chevron-left-solid')
-          h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+          div
+            h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
           button.chevron__right
             !=h.icon('chevron-right-solid')
         .menu__items
@@ -21,6 +22,8 @@ html
             each item in h.menu
               .menu__item
                 a(href=item.link) !{item.title}
+          .menu__site-name
+            != h.siteName
           .menu__right      
             -let menus = ['search-solid', 'user-solid', 'shopping-bag-solid']
             each icon in menus
