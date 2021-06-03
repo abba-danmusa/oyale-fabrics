@@ -14,7 +14,8 @@ html
           button.chevron__left
             !=h.icon('chevron-left-solid')
           div
-            h1 Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+            h1 Lorem ipsum dolor sit amet, consectetur adipiscing, consectetur adipiscing. 
+            a.learn__more(href='#') Learn More
           button.chevron__right
             !=h.icon('chevron-right-solid')
         .menu__items
@@ -23,7 +24,7 @@ html
               .menu__item
                 a(href=item.link) !{item.title}
           .menu__site-name
-            != h.siteName
+            h1 Oyale Fabrics
           .menu__right      
             -let menus = ['search-solid', 'user-solid', 'shopping-bag-solid']
             each icon in menus

@@ -1,10 +1,12 @@
 nav {
+    position: fixed;
+    top: 0;
     background-color: $orange;
     height: fit-content;
     width: 100%;
     svg {
-        width: 20px;
-        height: 20px;
+        width: 27px;
+        height: 27px;
     }
 }
 
@@ -12,13 +14,27 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    margin: 3vh 0;
+    margin-top: 2vh;
     svg {
-        width: 10px;
-        height: 10px;
+        width: 12px;
+        height: 15px;
     }
     div {
         margin: 0 4vw;
+        margin-bottom: 2vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        h1 {
+            margin-bottom: 0;
+        }
+        a {
+            width: fit-content;
+            color: black;
+            text-decoration: underline;
+        }
     }
 }
 
@@ -26,11 +42,19 @@ nav {
     align-self: center;
 }
 
+[class*="__left"] {
+    margin-left: 2vw;
+}
+
+[class*="__right"] {
+    margin-right: 2vw;
+}
+
 .menu__left {
     display: none;
 }
 
-.menu__right .menu__items {
+.menu__items {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -52,6 +76,10 @@ a {
 
 .menu__site-name {
     margin-left: 2vw;
+    min-height: fit-content;
+    h1 {
+        margin: 0;
+    }
 }
 
 .menu__right {

@@ -3,7 +3,14 @@ html {
           box-sizing: border-box;
 }
 
-*, *:before, *:after {
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*:before,
+*:after {
   -webkit-box-sizing: inherit;
           box-sizing: inherit;
 }
@@ -464,11 +471,17 @@ template {
   display: none;
 }
 
-h1 {
+.ads {
+  font-size: 12px;
+}
+
+.ads h1 {
   font-size: 12px;
 }
 
 nav {
+  position: fixed;
+  top: 0;
   background-color: #EC754A;
   height: -webkit-fit-content;
   height: -moz-fit-content;
@@ -477,8 +490,8 @@ nav {
 }
 
 nav svg {
-  width: 20px;
-  height: 20px;
+  width: 27px;
+  height: 27px;
 }
 
 .ads {
@@ -492,16 +505,43 @@ nav svg {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 3vh 0;
+  margin-top: 2vh;
 }
 
 .ads svg {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 15px;
 }
 
 .ads div {
   margin: 0 4vw;
+  margin-bottom: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+
+.ads div h1 {
+  margin-bottom: 0;
+}
+
+.ads div a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: black;
+  text-decoration: underline;
 }
 
 [class*="chevron"] {
@@ -510,11 +550,19 @@ nav svg {
       align-self: center;
 }
 
+[class*="__left"] {
+  margin-left: 2vw;
+}
+
+[class*="__right"] {
+  margin-right: 2vw;
+}
+
 .menu__left {
   display: none;
 }
 
-.menu__right .menu__items {
+.menu__items {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -547,6 +595,13 @@ a {
 
 .menu__site-name {
   margin-left: 2vw;
+  min-height: -webkit-fit-content;
+  min-height: -moz-fit-content;
+  min-height: fit-content;
+}
+
+.menu__site-name h1 {
+  margin: 0;
 }
 
 .menu__right {
