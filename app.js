@@ -27,8 +27,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Exposes a bunch of methods for validating data. Used heavily on userController.validateRegister
-app.use(check())
 app.use(body())
+app.use(check())
 
 // populates req.cookies with any cookies that came along with the request
 app.use(cookieParser())

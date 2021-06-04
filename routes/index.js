@@ -10,7 +10,7 @@ const router = express.Router()
 
 // GET routes
 router.get('/', storeController.homePage)
-router.get('/register', userController.validateRegister, userController.registerForm)
+router.get('/register', userController.registerForm)
 router.get('/login', userController.loginPage)
 
 // POST routes
