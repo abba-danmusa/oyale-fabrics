@@ -34,9 +34,10 @@ html
               span(class="nav__icon")
                 != h.icon('shopping-bag-solid')
               .cart__items 0
-            !=h.icon('bars-solid')
+            button.button.menu__btn
+              !=h.icon('bars-solid')
 
-        //- menu
+        //- cart
         .cart__overlay
           .cart
             span(class='close__cart')
@@ -46,8 +47,37 @@ html
             .cart__content
 
             .cart__footer
-              h3 Oyale Fabrics And Fashion Empire
-              h3 All Rights Reserved
+              h3 your total: $ 
+                span.cart__total 0
+              button.clear__cart.banner__btn clear cart
+              br
+              .copyright
+                p privacy | contact
+                p &copy 2021 Oyale Fabrics and Fashion Empire. 
+                p All rights reserved.
+
+        //- menu
+        .menu__overlay
+          .menu.cart
+            span(class='close__menu')
+              i.fas.fa-window-close
+            h2 Menu
+
+          .menu__content
+            != h.icon('user-solid')
+            if user
+              user.name
+
+          .menu__footer
+          h3 your total: $ 
+            span.cart__total 0
+            br
+            button.clear__cart.banner__btn clear cart
+
+          .copyright
+            p privacy | contact
+            p &copy 2021 Oyale Fabrics and Fashion Empire. 
+            p All rights reserved.
 
     .content  
       block messages
@@ -61,6 +91,7 @@ html
                   p.flash__text!= message
                   button.flash__remove(onClick="this.parentElement.remove()") &times;
       block content
+
 
     footer.footer
       block footer

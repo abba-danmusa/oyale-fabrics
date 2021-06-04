@@ -1,8 +1,8 @@
 import { $, $$ } from './modules/bling'
-import { slider } from './modules/slideShow'
-
-const homePage = $('.hero')
+import heroSlider from './modules/slideShow'
+import { openMenu, closeMenu } from './modules/showMenu'
 
 document.addEventListener('DOMContentLoaded', () => {
-    if (homePage) slider()
+    $('.menu__btn').on('click', openMenu)
+    $('.close__menu').on('click', closeMenu)
 })
