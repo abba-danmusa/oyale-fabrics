@@ -6,7 +6,6 @@ const path = require('path')
 const passport = require('passport')
 const { promisify } = require('es6-promisify')
 const flash = require('connect-flash')
-const { check, body } = require('express-validator')
 const cookieParser = require('cookie-parser')
 const bodyParser = require('body-parser')
 const routes = require('./routes/index')
@@ -27,8 +26,8 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 
 // Exposes a bunch of methods for validating data. Used heavily on userController.validateRegister
-app.use(body())
-app.use(check())
+// app.use(buildCheckFunction())
+// app.use(buildSanitizeFunction())
 
 // populates req.cookies with any cookies that came along with the request
 app.use(cookieParser())

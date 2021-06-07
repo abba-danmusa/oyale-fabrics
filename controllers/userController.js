@@ -1,35 +1,36 @@
 const mongoose = require('mongoose')
-const promisify = require('es6-promisify')
+const { promisify } = require('es6-promisify')
 const User = require('../models/user')
+const { check, validationResult } = require('express-validator')
 
 exports.loginPage = (req, res) => {
     res.render('login', { title: 'Account Login' })
 }
 
 exports.registerForm = (req, res) => {
-    const body = req.body
-    res.render('register', { title: 'Register', body })
+
+    res.render('register', { title: 'Register' })
 }
 
-exports.validateRegister = (req, res, next) => {
+exports.validateRegister = async(req, res, next) => {
 
-    req.body('name')
-    req.check('name', 'You must supply a name').notEmpty()
-    req.check('email', 'You must supply an email').notEmpty()
-    req.body('email')
-    normalizeEmail({
+    await check('name').run(req)
+    await check('name', 'You must supply a name').notEmpty().run(req)
+    await check('email', 'You must supply an email').notEmpty().run(req)
+    await check('email').run(req)
+    await check('email').normalizeEmail({
         remove_dots: false,
         remove_extension: false,
         gmail_remove_subaddress: false
-    })
-    req.check('password', 'Password cannot be blank').notEmpty()
-    req.check('confirm-password', 'Confirm-password cannot be empty').notEmpty()
-    req.check('confirm-password', 'Oops\! passwords must be equal').equals(req.body.password)
+    }).run(req)
+    await check('password', 'Password cannot be blank').notEmpty().run(req)
+    await check('confirm-password', 'Confirm-password cannot be empty').notEmpty().run(req)
+    await check('confirm-password', 'Oops\! passwords must be equal').equals(req.body.password).run(req)
 
-    const errors = req.validationErrors()
+    const errors = validationResult(req)
 
-    if (errors) {
-        req.flash('error', errors.map(err => err.msg))
+    if (!errors.isEmpty()) {
+        req.flash('error', errors.array().map(err => err.msg))
         res.render('register', { title: 'Register', body: req.body, flashes: req.flash() })
         return
     }
@@ -41,7 +42,7 @@ exports.register = async(req, res, next) => {
         name: req.body.name,
         email: req.body.email
     })
-    const register = promisify(User.register, User)
+    const register = promisify(User.register.bind(User))
     await register(user, req.body.password)
     next()
 }
