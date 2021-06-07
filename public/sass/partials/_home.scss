@@ -1,14 +1,12 @@
 .hero {
-    margin-top: 13vh;
+    position: relative;
 }
 
 .image__slide {
-    // display: none;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
-    height: 80vh;
+    display: none;
+    // background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    height: fit-content;
     width: 100%;
-    margin-left: 0;
-    margin-right: 0;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -16,7 +14,9 @@
 }
 
 img {
-    vertical-align: middle;
+    // vertical-align: middle;
+    width: 100%;
+    height: 60vh;
 }
 
 
@@ -30,32 +30,27 @@ img {
     width: auto;
     padding: 16px;
     margin-top: -22px;
-    color: white;
+    color: $orange;
     font-weight: bold;
     font-size: 18px;
     transition: 0.6s ease;
     border-radius: 0 3px 3px 0;
     user-select: none;
+    // &:hover {
+    //     background-color: rgba(0, 0, 0, 0.8);
+    // }
 }
 
-
-/* Position the "next button" to the right */
-
+//  Position the "next button" to the right
 .next {
     right: 0;
     border-radius: 3px 0 0 3px;
 }
 
-
-/* On hover, add a black background color with a little bit see-through */
-
+//  On hover, add a black background color with a little bit see-through 
 .prev:hover,
 .next:hover {
     background-color: rgba(0, 0, 0, 0.8);
-}
-
-.home__contents {
-    margin: 0 5vw;
 }
 
 .hero__text {
@@ -73,7 +68,232 @@ img {
     border-radius: 100px;
 }
 
-img {
-    width: 100%;
-    height: 80vh;
+// The dots/bullets/indicators 
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
 }
+
+.active,
+.dot:hover {
+    background-color: $orange;
+}
+
+//  Fading animation 
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.home__contents {
+    margin: 0 5vw;
+}
+
+// products section //
+.products {
+    margin-top: 5vh;
+    padding: 4rem 0;
+}
+
+.section__title {
+    a {
+        color: black;
+        text-decoration: underline;
+    }
+}
+
+.products__center {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    grid-column-gap: 1.5rem;
+    grid-row-gap: 2rem;
+}
+
+.img__container {
+    position: relative;
+    overflow: hidden;
+}
+
+.bag__btn {
+    position: absolute;
+    top: 70%;
+    right: 0;
+    background: $orange;
+    border: none;
+    text-transform: uppercase;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: $mainSpacing;
+    font-weight: bold;
+    transition: $mainTransition;
+    transform: translateX(101%);
+    cursor: pointer;
+    &:hover {
+        color: $white;
+    }
+}
+
+.shopping-bag__icon:hover {
+    color: $white;
+}
+
+.shopping-bag__icon {
+    margin-right: 0.5rem;
+}
+
+.img__container:hover .bag__btn {
+    transform: translateX(0);
+}
+
+.product__img {
+    display: block;
+    width: 100%;
+    min-height: 12rem;
+    transition: $mainTransition;
+}
+
+.img__container:hover .product__img {
+    opacity: 0.5;
+}
+
+.product h3 {
+    text-transform: capitalize;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+    letter-spacing: $mainSpacing;
+    text-align: center;
+}
+
+.product h4 {
+    margin-top: 0.7rem;
+    letter-spacing: $mainSpacing;
+    color: $orange;
+    text-align: center;
+}
+
+// End of products section
+// cart
+.cart__overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    transition: $mainTransition;
+    background: rgba(240, 157, 81, 0.5);
+    z-index: 2;
+    visibility: hidden;
+}
+
+.cart {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: scroll;
+    z-index: 3;
+    background: rgb(231, 226, 221);
+    padding: 1.5rem;
+    transition: $mainTransition;
+    transform: translateX(100%);
+}
+
+.showCart {
+    transform: translateX(0);
+}
+
+.transparentBcg {
+    visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
+    .cart {
+        width: 30vw;
+        min-width: 450px;
+    }
+}
+
+.close__cart {
+    font-size: 1.7rem;
+    cursor: pointer;
+}
+
+.cart h2 {
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: $mainSpacing;
+    margin-bottom: 2rem;
+}
+
+// Cart items
+.cart__item {
+    display: grid;
+    align-items: center;
+    grid-template-columns: auto 1fr auto;
+    grid-column-gap: 1.5rem;
+    margin: 1.5rem 0;
+}
+
+.cart__item img {
+    width: 75px;
+    height: 75px;
+}
+
+.cart__item h4 {
+    font-size: 0.85rem;
+    text-transform: capitalize;
+    letter-spacing: $mainSpacing;
+}
+
+.cart__item h5 {
+    margin: 0.5rem 0;
+    letter-spacing: $mainSpacing;
+}
+
+.item__amount {
+    text-align: center;
+}
+
+.remove-item {
+    color: grey;
+    cursor: pointer;
+}
+
+.fa-chevron-up,
+.fa-chevron-down {
+    color: $orange;
+    cursor: pointer;
+}
+
+// End of cart item
+// Cart footer
+.cart__footer {
+    margin-top: 2rem;
+    letter-spacing: $mainSpacing;
+    text-align: center;
+}
+
+.cart__footer h3 {
+    text-transform: capitalize;
+    margin-bottom: 1rem;
+}
+
+// End of Cart

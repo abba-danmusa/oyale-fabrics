@@ -26,10 +26,15 @@ html
           .menu__site-name
             h1 Oyale Fabrics
           .menu__right      
-            -let menus = ['search-solid', 'user-solid', 'shopping-bag-solid']
+            -let menus = ['search-solid', 'user-solid']
             each icon in menus
               button.button 
-                != h.icon(icon)    
+                != h.icon(icon)
+            .cart__btn
+              span(class="nav__icon")
+                != h.icon('shopping-bag-solid')
+              .cart__items 0
+            i.fas.fa-bars
 
     .content  
       block content
@@ -49,6 +54,7 @@ html
 
     block scripts
       script(src='/dist/App.bundle.js', defer)
+      script(src='/dist/cartSystem.js', defer)
       script(src="https://cdn.jsdelivr.net/npm/contentful@latest/dist/contentful.browser.min.js")
       script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js", defer)
       script(src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js", defer)

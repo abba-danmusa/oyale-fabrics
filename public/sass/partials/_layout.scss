@@ -57,7 +57,8 @@ nav {
     flex-direction: row;
     justify-content: space-between;
     color: $silver;
-    svg {
+    svg,
+    .fas.fa-bars {
         width: 27px;
         height: 27px;
         &>path {
@@ -93,6 +94,29 @@ a {
     width: 30%;
     justify-content: space-around;
     align-items: flex-end;
+}
+
+.nav__icon {
+    font-size: 1.5rem;
+}
+
+.user__icon {
+    display: none;
+}
+
+.cart__btn {
+    position: relative;
+    cursor: pointer;
+}
+
+.cart__items {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: $white;
+    padding: 0 5px;
+    border-radius: 30%;
+    color: black;
 }
 
 // Footer //
