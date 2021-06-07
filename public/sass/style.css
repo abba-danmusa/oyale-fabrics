@@ -617,7 +617,7 @@ a {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  width: 30%;
+  width: 35%;
   -ms-flex-pack: distribute;
       justify-content: space-around;
   -webkit-box-align: end;

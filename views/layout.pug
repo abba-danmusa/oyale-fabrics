@@ -34,7 +34,20 @@ html
               span(class="nav__icon")
                 != h.icon('shopping-bag-solid')
               .cart__items 0
-            != h.icon('bars-solid')
+            !=h.icon('bars-solid')
+
+        //- menu
+        .cart__overlay
+          .cart
+            span(class='close__cart')
+              i.fas.fa-window-close
+            h2 your cart
+
+            .cart__content
+
+            .cart__footer
+              h3 Oyale Fabrics And Fashion Empire
+              h3 All Rights Reserved
 
     .content  
       block messages
