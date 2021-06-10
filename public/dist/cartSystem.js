@@ -1,5 +1,3 @@
-const user = require("../../models/user")
-
 const cartBtn = document.querySelector('.cart__btn')
 const closeCartBtn = document.querySelector('.close__cart')
 const clearCartBtn = document.querySelector('.clear__cart')
@@ -47,8 +45,8 @@ class UI {
          <article class="product">
             <div class="img__container">
                 <img src=${products.image} alt="product" class="product__img">
-                <form action='/api/product/${products.id}/cart' method="POST">
-                    <button class="bag__btn" data-id=${products.id} type="submit">
+                <form action='/api/products/${products.id}/cart' method="POST">
+                    <button type="submit" class="bag__btn" data-id=${products.id}>
                         <i class="fas fa-shopping-cart"></i>
                         add to cart
                     </button>
@@ -62,39 +60,39 @@ class UI {
     }
 
     // adding functionality to the bag buttons
-    getBagButtons() {
-        const buttons = [...document.querySelectorAll('.bag__btn')]
-        buttonsDOM = buttons
-        buttons.forEach(button => {
-            let id = button.dataset.id
-            let inCart = cart.find(item => item.id === id)
-            if (inCart) {
-                button.innerText = "In Cart"
-                button.disabled = true
-            }
-            button.addEventListener('click', event => {
-                event.target.disabled = true
-                event.target.innerText = "In Cart"
-                    // get the targeted product from the local storage
-                let cartItem = {...Storage.getProduct(id), amount: 1 }
+    // getBagButtons() {
+    //     const buttons = [...document.querySelectorAll('.bag__btn')]
+    //     buttonsDOM = buttons
+    //     buttons.forEach(button => {
+    //         let id = button.dataset.id
+    //         let inCart = cart.find(item => item.id === id)
+    //         if (inCart) {
+    //             button.innerText = "In Cart"
+    //             button.disabled = true
+    //         }
+    //         button.addEventListener('click', event => {
+    //             event.target.disabled = true
+    //             event.target.innerText = "In Cart"
+    //                 // get the targeted product from the local storage
+    //             let cartItem = {...Storage.getProduct(id), amount: 1 }
 
-                // add the targeted product into the cart
-                cart = [...cart, cartItem]
+    //             // add the targeted product into the cart
+    //             cart = [...cart, cartItem]
 
-                // save the cart in the local storage
-                Storage.saveCart(cart)
+    //             // save the cart in the local storage
+    //             Storage.saveCart(cart)
 
-                // set cart value
-                this.setCartValues(cart)
+    //             // set cart value
+    //             this.setCartValues(cart)
 
-                // display the items in the cart
-                this.addCartItem(cartItem)
+    //             // display the items in the cart
+    //             this.addCartItem(cartItem)
 
-                // show the cart
-                // this.showCart();
-            })
-        })
-    }
+    //             // show the cart
+    //             // this.showCart();
+    //         })
+    //     })
+    // }
 
     setCartValues(cart) {
         let tempTotal = 0
@@ -237,7 +235,7 @@ document.addEventListener("DOMContentLoaded", () => {
         ui.displayProducts(products)
         Storage.saveProducts(products)
     }).then(() => {
-        ui.getBagButtons()
+        // ui.getBagButtons()
         ui.cartLogic()
     })
 })

@@ -27,7 +27,7 @@ const userSchema = new Schema({
     },
     // resetPasswordToken: String,
     // resetPasswordExpires: Date,
-    hearts: [{
+    products: [{
         type: String
     }]
 })

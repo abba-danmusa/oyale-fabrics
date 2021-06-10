@@ -56,3 +56,15 @@ exports.userAccount = (req, res) => {
     // get the users orders history
     res.render('userAccount')
 }
+
+exports.addToCart = async(req, res, next) => {
+
+    const products = req.user.products.map(obj => obj.toString())
+    const operator = products.includes(req.params.id) ? '$pull' : '$addToSet'
+
+    const user = await User.findByIdAndUpdate(
+        req.user._id, {
+            [operator]: { products: req.params.id }
+        }, { new: true }
+    )
+}
