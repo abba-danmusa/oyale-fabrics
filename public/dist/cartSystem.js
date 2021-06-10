@@ -1,3 +1,5 @@
+const user = require("../../models/user")
+
 const cartBtn = document.querySelector('.cart__btn')
 const closeCartBtn = document.querySelector('.close__cart')
 const clearCartBtn = document.querySelector('.clear__cart')
@@ -45,10 +47,12 @@ class UI {
          <article class="product">
             <div class="img__container">
                 <img src=${products.image} alt="product" class="product__img">
-                <button class="bag__btn" data-id=${products.id}>
-                    <i class="fas fa-shopping-cart"></i>
-                    add to cart
-                </button>
+                <form action='/api/product/${products.id}/cart' method="POST">
+                    <button class="bag__btn" data-id=${products.id} type="submit">
+                        <i class="fas fa-shopping-cart"></i>
+                        add to cart
+                    </button>
+                </form>
             </div>
             <h3>${products.title}</h3>
             <h4>$${products.price}</h4>

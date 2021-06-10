@@ -1,14 +1,12 @@
 import { $, $$ } from './bling'
-const menu = $('.menu__overlay')
-const menuDom = $('.menu')
+
 
 function openMenu() {
-    menu.classList.add('transparentBcg')
-    menuDOM.classList.add('showCart')
+    var x = $("#menu");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
 }
-
-function closeMenu() {
-    menu.classList.remove('transparentBcg');
-    menuDOM.classList.remove('showCart')
-}
-export { openMenu, closeMenu }
+export default openMenu

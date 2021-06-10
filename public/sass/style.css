@@ -873,6 +873,47 @@ a {
   overflow-wrap: break-word;
 }
 
+#menu {
+  display: none;
+  padding: 5vh 0;
+  background-color: black;
+  color: #EC754A;
+}
+
+#menu a {
+  padding: 8px 8px 8px 32px;
+  text-decoration: none;
+  font-size: 25px;
+  color: #EC754A;
+  display: block;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+#menu a svg {
+  width: 30px;
+  height: 30px;
+  fill: #EC754A;
+  color: #EC754A;
+}
+
+#menu a svg > path {
+  fill: #EC754A;
+}
+
+.menu a:hover {
+  color: #f1f1f1;
+}
+
+.user {
+  margin-bottom: 4vh;
+  padding: 8px 8px 8px 32px;
+}
+
+.user h1 {
+  margin: 0;
+}
+
 @-webkit-keyframes slideIn {
   0% {
     -webkit-transform: translateX(-10px);

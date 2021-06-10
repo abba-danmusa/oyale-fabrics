@@ -36,6 +36,7 @@
     "passport-local-mongoose": "^6.1.0",
     "pug": "^3.0.2",
     "sessions": "0.0.2-7",
+    "slug": "^5.0.1",
     "validator": "^13.6.0",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0"

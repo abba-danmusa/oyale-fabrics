@@ -46,3 +46,13 @@ exports.register = async(req, res, next) => {
     await register(user, req.body.password)
     next()
 }
+
+exports.userAccount = (req, res) => {
+    // find the user
+    // get the users cart items
+    // get the users wish list items
+    // get the users order items
+    // get the users shipped order items
+    // get the users orders history
+    res.render('userAccount')
+}
