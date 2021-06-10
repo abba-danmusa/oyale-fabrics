@@ -13,6 +13,7 @@
   "author": "abba danmusa",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.21.1",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",
     "body-parser": "^1.19.0",

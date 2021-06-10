@@ -45,8 +45,8 @@ class UI {
          <article class="product">
             <div class="img__container">
                 <img src=${products.image} alt="product" class="product__img">
-                <form action='/api/products/${products.id}/cart' method="POST">
-                    <button type="submit" class="bag__btn" data-id=${products.id}>
+                <form class="addToCart" action='/api/products/${products.id}/cart' method="POST">
+                    <button type="submit" name="cart" class="bag__btn" data-id=${products.id}>
                         <i class="fas fa-shopping-cart"></i>
                         add to cart
                     </button>
