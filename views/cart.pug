@@ -1,0 +1,25 @@
+extends layout
+block content
+  .cart
+    span(class="close__cart")
+      i.fas.fa-window-close
+    h2 Your Bag
+    .cart__content
+      if products.length
+        each item in products
+          .cart__item
+            img(src=`${item.image}` alt="")
+            div
+              h4=item.title
+              h5 $!{item.price}
+              span(class="remove__item" data-id=`${item.id}`) remove
+            div
+              i(class="fas fa-chevron-up" data-id=`${item.id}`)
+              p(class="item__amount")=item.amount
+              i(class="fas fa-chevron-down" data-id=`${item.id}`)
+      else
+        h1 Your Cart is empty
+    .cart__footer
+      h3 your total : $ 
+        span(class="cart__total") 0
+      button(class="clear__cart banner__btn") clear cart

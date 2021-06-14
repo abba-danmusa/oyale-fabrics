@@ -5,9 +5,10 @@ import ajaxHeart from './modules/cart'
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
     $('.menu__btn').on('click', openMenu)
 
+    const cartForms = $$('.addToCart')
+    cartForms.on('submit', ajaxHeart)
+
 })
-const cartForms = $$('.addToCart')
-console.log(cartForms)
-cartForms.on('submit', ajaxHeart)

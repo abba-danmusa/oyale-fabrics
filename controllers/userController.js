@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const { promisify } = require('es6-promisify')
 const User = require('../models/user')
 const { check, validationResult } = require('express-validator')
+const { getContentfulProduct, getProducts, getContentfulProducts } = require('../services/getProducts')
 
 exports.loginPage = (req, res) => {
     res.render('login', { title: 'Account Login' })
@@ -67,4 +68,26 @@ exports.addToCart = async(req, res, next) => {
             [operator]: { products: req.params.id }
         }, { new: true }
     )
+}
+
+exports.userCart = async(req, res) => {
+    const user = await User.findById(req.params.id)
+    let userCart = user.products
+
+    let products = []
+
+    for (let i = 0; i < userCart.length; i++) {
+        let item = await getContentfulProduct(userCart[i])
+        products.push(item)
+    }
+
+    products = products.map(item => {
+        const { title, price } = item.fields
+        const { id } = item.sys
+        const image = item.fields.image.fields.file.url
+        return { title, price, id, image }
+    })
+
+    let [userName] = user.name.split(' ')
+    res.render('cart', { title: `${userName}'s Cart`, products })
 }

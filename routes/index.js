@@ -14,10 +14,10 @@ router.get('/register', userController.validateRegister, userController.register
 router.get('/login', userController.loginPage)
 router.get('/logout', authController.logout)
 router.get('/user/:id', userController.userAccount)
+router.get('/user/:id/Cart', userController.userCart)
 
 // POST routes
 router.post('/register', userController.validateRegister, catchErrors(userController.register), authController.login)
-
 router.post('/login', authController.login)
 
 // API's //

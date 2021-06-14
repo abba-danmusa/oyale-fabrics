@@ -2,14 +2,14 @@ import axios from 'axios'
 import { $ } from './bling'
 
 function ajaxCart(event) {
-    console.log(event)
     event.preventDefault()
     axios
         .post(this.action)
-        .then(() => {
-            button.textContent = 'Remove from cart'
+        .then(res => {
+            console.log(res)
         })
-        .catch(console.error)
+        .catch(error => console.log(error))
+        .then(res => $('.cart__items').textContent = res.data.products.length)
 }
 
 export default ajaxCart

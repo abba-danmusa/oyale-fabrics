@@ -126,16 +126,16 @@ class UI {
 
     }
     showCart() {
-        cartOverlay.classList.add('transparentBcg')
-        cartDOM.classList.add('showCart')
-    }
-    setupAPP() {
-        cart = Storage.getCart()
-        this.setCartValues(cart)
-        this.populateCart(cart)
-        cartBtn.addEventListener('click', this.showCart)
-        closeCartBtn.addEventListener('click', this.closeCart)
-    }
+            cartOverlay.classList.add('transparentBcg')
+            cartDOM.classList.add('showCart')
+        }
+        // setupAPP() {
+        //     cart = Storage.getCart()
+        //     this.setCartValues(cart)
+        //     this.populateCart(cart)
+        //     cartBtn.addEventListener('click', this.showCart)
+        //     closeCartBtn.addEventListener('click', this.closeCart)
+        // }
     populateCart(cart) {
         cart.forEach(item => this.addCartItem(item))
     }
