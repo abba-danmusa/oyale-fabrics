@@ -6,10 +6,10 @@ function ajaxCart(event) {
     axios
         .post(this.action)
         .then(res => {
-            console.log(res)
+            console.log('hello world')
+            $('.cart__items').textContent = res.data.products.length
         })
         .catch(error => console.log(error))
-        .then(res => $('.cart__items').textContent = res.data.products.length)
 }
 
 export default ajaxCart

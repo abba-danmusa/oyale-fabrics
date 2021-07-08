@@ -50,16 +50,23 @@ html
           //- a(href=`/user/${user.slug}`)
           //-   != h.icon('user-solid')
           if user
-            a(href=`/user/${user._id}`) My Account
-              //- h1 Welcome,
-              //- a(href=`/user/${user.slug}`)
-              //-   h6=user.name
+            //- a(href=`/user/${user._id}`) My Account
+            //- h1 Welcome,
+            
+            .user__avatar 
+              a(href=`/user/${user.slug}`)
+                i.fas.fa-user
+                span My Account
               //- a(href=`/user/${user.slug}/${user.cart}`)
-              //-   h6 My Cart
+              //-   h6 My Bag
               //- a(href=`/user/${user.slug}/${user.hearts}`)
               //-   h6 My Wish list
               //- a(href=`/user/${user.slug}/${user.cart}`)
-              //-   h6 Logout
+              //- a(href='/logout') Logout
+              a(href="#news") Shop Men
+              a(href="#contact") Shop Women
+              a(href="#about") About
+              a(href="#about") Contact
           else
             a(href="/login") Login or Sign up
             a(href="#news") Shop Men

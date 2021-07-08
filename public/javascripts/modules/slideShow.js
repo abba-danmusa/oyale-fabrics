@@ -45,6 +45,6 @@ function showSlides(n) {
     dots[slideIndex - 1].className += " active";
 }
 
-document.on('DOMContentLoaded', slider)
+// document.on('DOMContentLoaded', slider)
 
-module.exports
+export default slider

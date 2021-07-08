@@ -91,3 +91,7 @@ exports.userCart = async(req, res) => {
     let [userName] = user.name.split(' ')
     res.render('cart', { title: `${userName}'s Cart`, products })
 }
+
+exports.closeCart = (req, res) => {
+    res.redirect('/')
+}

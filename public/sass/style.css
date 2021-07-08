@@ -840,6 +840,7 @@ a {
   padding: 5vh 0;
   background-color: black;
   color: #EC754A;
+  z-index: 4;
 }
 
 #menu a {
@@ -874,6 +875,19 @@ a {
 
 .user h1 {
   margin: 0;
+}
+
+.user__avatar a svg {
+  width: 30px;
+  height: 30px;
+}
+
+.user__avatar a svg > path {
+  fill: #EC754A;
+}
+
+.user__avatar a span {
+  margin-left: 2vw;
 }
 
 @-webkit-keyframes slideIn {

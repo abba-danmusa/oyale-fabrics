@@ -312,7 +312,7 @@ eval("\n\nvar bind = __webpack_require__(/*! ./helpers/bind */ \"./node_modules/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_bling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/bling */ \"./public/javascripts/modules/bling.js\");\n/* harmony import */ var _modules_slideShow__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/slideShow */ \"./public/javascripts/modules/slideShow.js\");\n/* harmony import */ var _modules_showMenu__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/showMenu */ \"./public/javascripts/modules/showMenu.js\");\n/* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/cart */ \"./public/javascripts/modules/cart.js\");\n\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n\n    (0,_modules_bling__WEBPACK_IMPORTED_MODULE_0__.$)('.menu__btn').on('click', _modules_showMenu__WEBPACK_IMPORTED_MODULE_2__.default);\n\n    const cartForms = (0,_modules_bling__WEBPACK_IMPORTED_MODULE_0__.$$)('.addToCart');\n    cartForms.on('submit', _modules_cart__WEBPACK_IMPORTED_MODULE_3__.default);\n});\n\n//# sourceURL=webpack://fashion-store/./public/javascripts/index-app.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _modules_bling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/bling */ \"./public/javascripts/modules/bling.js\");\n/* harmony import */ var _modules_openMenu__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/openMenu */ \"./public/javascripts/modules/openMenu.js\");\n/* harmony import */ var _modules_cart__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/cart */ \"./public/javascripts/modules/cart.js\");\n/* harmony import */ var _modules_slideShow__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/slideShow */ \"./public/javascripts/modules/slideShow.js\");\n\n\n\n\n\ndocument.addEventListener('DOMContentLoaded', () => {\n    const home = (0,_modules_bling__WEBPACK_IMPORTED_MODULE_0__.$)('.hero');\n    if (home) {\n        (0,_modules_slideShow__WEBPACK_IMPORTED_MODULE_3__.default)();\n    }\n    (0,_modules_bling__WEBPACK_IMPORTED_MODULE_0__.$)('.menu__btn').on('click', _modules_openMenu__WEBPACK_IMPORTED_MODULE_1__.default);\n    console.log('clicked');\n    const cartForms = (0,_modules_bling__WEBPACK_IMPORTED_MODULE_0__.$$)('.addToCart');\n    cartForms.on('submit', _modules_cart__WEBPACK_IMPORTED_MODULE_2__.default);\n});\n\n//# sourceURL=webpack://fashion-store/./public/javascripts/index-app.js?");
 
 /***/ }),
 
@@ -334,18 +334,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _bling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bling */ \"./public/javascripts/modules/bling.js\");\n\n\n\nfunction ajaxCart(event) {\n    event.preventDefault();\n    axios__WEBPACK_IMPORTED_MODULE_0___default().post(this.action).then(res => {\n        console.log(res);\n    }).catch(error => console.log(error)).then(res => (0,_bling__WEBPACK_IMPORTED_MODULE_1__.$)('.cart__items').textContent = res.data.products.length);\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ajaxCart);\n\n//# sourceURL=webpack://fashion-store/./public/javascripts/modules/cart.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ \"./node_modules/axios/index.js\");\n/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _bling__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bling */ \"./public/javascripts/modules/bling.js\");\n\n\n\nfunction ajaxCart(event) {\n    event.preventDefault();\n    axios__WEBPACK_IMPORTED_MODULE_0___default().post(this.action).then(res => {\n        console.log('hello world');\n        (0,_bling__WEBPACK_IMPORTED_MODULE_1__.$)('.cart__items').textContent = res.data.products.length;\n    }).catch(error => console.log(error));\n}\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (ajaxCart);\n\n//# sourceURL=webpack://fashion-store/./public/javascripts/modules/cart.js?");
 
 /***/ }),
 
-/***/ "./public/javascripts/modules/showMenu.js":
+/***/ "./public/javascripts/modules/openMenu.js":
 /*!************************************************!*\
-  !*** ./public/javascripts/modules/showMenu.js ***!
+  !*** ./public/javascripts/modules/openMenu.js ***!
   \************************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _bling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bling */ \"./public/javascripts/modules/bling.js\");\n\n\nfunction openMenu() {\n    var x = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$)(\"#menu\");\n    if (x.style.display === \"block\") {\n        x.style.display = \"none\";\n    } else {\n        x.style.display = \"block\";\n    }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openMenu);\n\n//# sourceURL=webpack://fashion-store/./public/javascripts/modules/showMenu.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _bling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bling */ \"./public/javascripts/modules/bling.js\");\n\n\nfunction openMenu() {\n    console.log('clicked');\n    let menu = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$)(\"#menu\");\n    if (menu.style.display == \"block\") {\n        menu.style.display = \"none\";\n    } else {\n        menu.style.display = \"block\";\n    }\n}\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (openMenu);\n\n//# sourceURL=webpack://fashion-store/./public/javascripts/modules/openMenu.js?");
 
 /***/ }),
 
@@ -353,10 +353,10 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
 /*!*************************************************!*\
   !*** ./public/javascripts/modules/slideShow.js ***!
   \*************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bling */ \"./public/javascripts/modules/bling.js\");\n/* module decorator */ module = __webpack_require__.hmd(module);\n\n\nconst prev = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$)('.prev');\nconst next = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$)('.next');\nconst slides = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$$)('.image__slide');\nconst dots = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$$)('.dot');\n\nlet slideIndex = 1;\n\nfunction slider() {\n    setInterval(() => {\n        showSlides(slideIndex += 1);\n    }, 3000);\n    prev.on('click', () => {\n        showSlides(slideIndex += -1);\n    });\n\n    next.on('click', () => {\n        showSlides(slideIndex += 1);\n    });\n\n    let numbers = [1, 2, 3, 4];\n    for (let i, j = 0; i < dots.length && j < numbers.length; i++) {\n        dots[i].on('click', () => {\n            showSlides(slideIndex = numbers[j]);\n        });\n    }\n}\n\nshowSlides(slideIndex);\n\nfunction showSlides(n) {\n    let i;\n\n    if (n > slides.length) slideIndex = 1;\n    if (n < 1) slideIndex = slides.length;\n\n    for (i = 0; i < slides.length; i++) {\n        slides[i].style.display = 'none';\n    }\n    for (i = 0; i < dots.length; i++) {\n        dots[i].className = dots[i].className.replace(' active', '');\n    }\n\n    slides[slideIndex - 1].style.display = \"block\";\n    dots[slideIndex - 1].className += \" active\";\n}\n\ndocument.on('DOMContentLoaded', slider);\n\nmodule.exports;\n\n//# sourceURL=webpack://fashion-store/./public/javascripts/modules/slideShow.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"default\": () => (__WEBPACK_DEFAULT_EXPORT__)\n/* harmony export */ });\n/* harmony import */ var _bling__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bling */ \"./public/javascripts/modules/bling.js\");\n\n\nconst prev = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$)('.prev');\nconst next = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$)('.next');\nconst slides = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$$)('.image__slide');\nconst dots = (0,_bling__WEBPACK_IMPORTED_MODULE_0__.$$)('.dot');\n\nlet slideIndex = 1;\n\nfunction slider() {\n    setInterval(() => {\n        showSlides(slideIndex += 1);\n    }, 3000);\n    prev.on('click', () => {\n        showSlides(slideIndex += -1);\n    });\n\n    next.on('click', () => {\n        showSlides(slideIndex += 1);\n    });\n\n    let numbers = [1, 2, 3, 4];\n    for (let i, j = 0; i < dots.length && j < numbers.length; i++) {\n        dots[i].on('click', () => {\n            showSlides(slideIndex = numbers[j]);\n        });\n    }\n}\n\nshowSlides(slideIndex);\n\nfunction showSlides(n) {\n    let i;\n\n    if (n > slides.length) slideIndex = 1;\n    if (n < 1) slideIndex = slides.length;\n\n    for (i = 0; i < slides.length; i++) {\n        slides[i].style.display = 'none';\n    }\n    for (i = 0; i < dots.length; i++) {\n        dots[i].className = dots[i].className.replace(' active', '');\n    }\n\n    slides[slideIndex - 1].style.display = \"block\";\n    dots[slideIndex - 1].className += \" active\";\n}\n\n// document.on('DOMContentLoaded', slider)\n\n/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (slider);\n\n//# sourceURL=webpack://fashion-store/./public/javascripts/modules/slideShow.js?");
 
 /***/ })
 
@@ -374,16 +374,13 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bli
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			id: moduleId,
-/******/ 			loaded: false,
+/******/ 			// no module.id needed
+/******/ 			// no module.loaded needed
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
 /******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Flag the module as loaded
-/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
@@ -411,21 +408,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bli
 /******/ 					Object.defineProperty(exports, key, { enumerable: true, get: definition[key] });
 /******/ 				}
 /******/ 			}
-/******/ 		};
-/******/ 	})();
-/******/ 	
-/******/ 	/* webpack/runtime/harmony module decorator */
-/******/ 	(() => {
-/******/ 		__webpack_require__.hmd = (module) => {
-/******/ 			module = Object.create(module);
-/******/ 			if (!module.children) module.children = [];
-/******/ 			Object.defineProperty(module, 'exports', {
-/******/ 				enumerable: true,
-/******/ 				set: () => {
-/******/ 					throw new Error('ES Modules may not assign module.exports or exports.*, Use ESM export syntax, instead: ' + module.id);
-/******/ 				}
-/******/ 			});
-/******/ 			return module;
 /******/ 		};
 /******/ 	})();
 /******/ 	

@@ -15,6 +15,7 @@ router.get('/login', userController.loginPage)
 router.get('/logout', authController.logout)
 router.get('/user/:id', userController.userAccount)
 router.get('/user/:id/Cart', userController.userCart)
+router.get('/closeCart', userController.closeCart)
 
 // POST routes
 router.post('/register', userController.validateRegister, catchErrors(userController.register), authController.login)

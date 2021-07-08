@@ -3,6 +3,7 @@
     padding: 5vh 0;
     background-color: black;
     color: $orange;
+    z-index: 4;
 }
 
 #menu a {
@@ -32,5 +33,21 @@
     padding: 8px 8px 8px 32px;
     h1 {
         margin: 0;
+    }
+}
+
+.user__avatar {
+    a {
+        svg {
+            width: 30px;
+            height: 30px;
+            &>path {
+        
+                fill: $orange;
+            }
+        }
+        span {
+            margin-left: 2vw;
+        }
     }
 }
