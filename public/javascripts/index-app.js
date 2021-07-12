@@ -1,18 +1,22 @@
 import { $, $$ } from './modules/bling'
 import openMenu from './modules/openMenu'
-import ajaxCart from './modules/cart'
+import { addToCart, removeFromCart } from './modules/cart'
 import heroSlider from './modules/slideShow'
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const home = $('.hero')
-    if (home) {
-        heroSlider()
+    const hero = $('.hero')
+    if (hero !== undefined) {
+        heroSlider
     }
     $('.menu__btn').on('click', openMenu)
-    console.log('clicked')
-    const cartForms = $$('.addToCart')
-    cartForms.on('submit', ajaxCart)
 
+    // Adds to cart on submit
+    const cartForms = $$('.addToCart')
+    cartForms.on('submit', addToCart)
+
+    // removes from cart on submit
+    const removeForms = $$('.remove__from--cart')
+    removeForms.on('submit', removeFromCart)
 
 })

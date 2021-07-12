@@ -68,6 +68,7 @@ exports.addToCart = async(req, res, next) => {
             [operator]: { products: req.params.id }
         }, { new: true }
     )
+    res.json(user)
 }
 
 exports.userCart = async(req, res) => {

@@ -24,9 +24,9 @@ html
             each item in h.menu
               .menu__item
                 a(href=item.link) !{item.title}
-          .menu__site-name
+          .menu__site-logo
             a(href='/')
-              h1 Oyale Fabrics
+              !=h.icon('site-logo')
           
           .menu__right      
             -let menus = ['search-solid']
@@ -63,16 +63,16 @@ html
               //-   h6 My Wish list
               //- a(href=`/user/${user.slug}/${user.cart}`)
               //- a(href='/logout') Logout
-              a(href="#news") Shop Men
-              a(href="#contact") Shop Women
-              a(href="#about") About
-              a(href="#about") Contact
+              a(href="/men") Shop Men
+              a(href="/women") Shop Women
+              a(href="/about-us") About
+              a(href="/contact-us") Contact
           else
             a(href="/login") Login or Sign up
-            a(href="#news") Shop Men
-            a(href="#contact") Shop Women
-            a(href="#about") About
-            a(href="#about") Contact
+            a(href="/men") Shop Men
+            a(href="/women") Shop Women
+            a(href="/about-us") About
+            a(href="/contact-us") Contact
 
         //- cart
         //- 

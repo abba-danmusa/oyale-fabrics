@@ -9,12 +9,21 @@ const { catchErrors } = require('../handlers/errorHandlers')
 const router = express.Router()
 
 // GET routes
-router.get('/', storeController.homePage)
+router.get('/', catchErrors(storeController.homePage))
+    // router.get('/men', storeController.menPage)
+router.get('/women', catchErrors(storeController.womenPage))
+    // router.get('/women/collections/lace')
+    // router.get('/women/collections/lycra')
+    // router.get('/women/collections/chiffon')
+    // router.get('/women/collections/Organza')
+    // router.get('/women/collections/crepe')
+    // router.get('/women/collections/silk')
+    // router.get('/women/collections/velvet')
 router.get('/register', userController.validateRegister, userController.registerForm)
 router.get('/login', userController.loginPage)
 router.get('/logout', authController.logout)
-router.get('/user/:id', userController.userAccount)
-router.get('/user/:id/Cart', userController.userCart)
+router.get('/user/:id', catchErrors(userController.userAccount))
+router.get('/user/:id/Cart', catchErrors(userController.userCart))
 router.get('/closeCart', userController.closeCart)
 
 // POST routes
@@ -24,6 +33,7 @@ router.post('/login', authController.login)
 // API's //
 
 router.post('/api/products/:id/cart', authController.isLoggedIn, catchErrors(userController.addToCart))
+router.post('/api/products/:id/remove', authController.isLoggedIn, catchErrors(userController.addToCart))
 
 // exports the express router
 module.exports = router

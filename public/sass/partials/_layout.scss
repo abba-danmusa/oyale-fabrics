@@ -80,11 +80,12 @@ a {
     text-decoration: none;
 }
 
-.menu__site-name {
+.menu__site-logo {
     margin-left: 2vw;
     min-height: fit-content;
-    h1 {
-        margin: 0;
+    svg {
+        width: 30px;
+        height: 30px;
     }
 }
 

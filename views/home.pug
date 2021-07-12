@@ -1,4 +1,7 @@
 extends layout
+
+include mixins/_products
+
 block content
 
   .hero
@@ -21,13 +24,4 @@ block content
     section(class="products")
       .section__title
         a(href='#') Shop the Collection
-      .products__center
-        each product in products
-          article.product
-            .img__container
-              img(src=`${product.image}` alt="product" class="product__img")
-              form.addToCart(action=`/api/products/${product.id}/cart` method="POST")
-                button(type="submit" name="cart" class="bag__btn" data-id=`${product.id}`)
-                  i.fas.fa-shopping-cart add to cart
-            h3= product.title
-            h4= product.price
+      +products(products)

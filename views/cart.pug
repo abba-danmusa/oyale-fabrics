@@ -13,10 +13,11 @@ block content
             div
               h4=item.title
               h5 $!{item.price}
-              span(class="remove__item" data-id=`${item.id}`) remove
+              form.remove__from--cart(action=`/api/products/${item.id}/remove` method='POST')
+                button(type="submit" class="remove__item" data-id=`${item.id}`) remove
             div
               i(class="fas fa-chevron-up" data-id=`${item.id}`)
-              p(class="item__amount")=item.amount
+              p(class="item__amount") 1
               i(class="fas fa-chevron-down" data-id=`${item.id}`)
       else
         h1 Your Cart is empty

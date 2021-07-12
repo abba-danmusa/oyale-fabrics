@@ -598,15 +598,16 @@ a {
   text-decoration: none;
 }
 
-.menu__site-name {
+.menu__site-logo {
   margin-left: 2vw;
   min-height: -webkit-fit-content;
   min-height: -moz-fit-content;
   min-height: fit-content;
 }
 
-.menu__site-name h1 {
-  margin: 0;
+.menu__site-logo svg {
+  width: 30px;
+  height: 30px;
 }
 
 .menu__right {
@@ -1120,19 +1121,22 @@ img {
 }
 
 .section__title a {
-  color: black;
+  color: #0000;
   text-decoration: underline;
 }
 
 .products__center {
-  width: 90vw;
+  width: auto;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   margin: 0 auto;
   max-width: 1170px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (minmax(260px, 1fr))[auto-fit];
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  grid-column-gap: 1.5rem;
+  -ms-grid-columns: (minmax(120px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  grid-column-gap: 1rem;
   grid-row-gap: 2rem;
 }
 
@@ -1151,6 +1155,7 @@ img {
   padding: 0.5rem 0.75rem;
   letter-spacing: 0.1rem;
   font-weight: bold;
+  font-size: 3vw;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
   -webkit-transform: translateX(101%);
@@ -1179,6 +1184,7 @@ img {
   display: block;
   width: 100%;
   min-height: 12rem;
+  max-height: 18rem;
   -webkit-transition: all 0.3s linear;
   transition: all 0.3s linear;
 }
