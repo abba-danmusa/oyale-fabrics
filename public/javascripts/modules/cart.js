@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { $ } from './bling'
+import { $, $$ } from './bling'
 
 function addToCart(event) {
     event.preventDefault()
@@ -22,7 +22,16 @@ function removeFromCart(event) {
         .catch(error => console.log(error))
 }
 
+function incrementCartItem(event) {
+    if (event.target.className == 'fas fa-chevron-up') {
+        console.log('increment me')
+    }else if(event.target.className == 'fas fa-chevron-down'){
+        console.log('decrement me')
+    }
+}
+
 export {
     addToCart,
-    removeFromCart
+    removeFromCart,
+    incrementCartItem
 }

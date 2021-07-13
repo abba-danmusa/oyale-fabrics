@@ -1,6 +1,6 @@
 import { $, $$ } from './modules/bling'
 import openMenu from './modules/openMenu'
-import { addToCart, removeFromCart } from './modules/cart'
+import { addToCart, removeFromCart, incrementCartItem } from './modules/cart'
 import heroSlider from './modules/slideShow'
 
 
@@ -18,5 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // removes from cart on submit
     const removeForms = $$('.remove__from--cart')
     removeForms.on('submit', removeFromCart)
+
+    // increments/decrements an item in the cart
+    const increments = $$('.fas.fa-chevron-up')
+    const decrements = $$('.fas.fa-chevron-down')
+    increments.on('click', event=> {
+        incrementCartItem(event)
+    })
+    decrements.on('click', event=> {
+        incrementCartItem(event)
+    })
 
 })
